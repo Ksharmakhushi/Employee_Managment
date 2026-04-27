@@ -1,0 +1,59 @@
+{% load static %}
+{% include 'header.html' %}
+{% include 'nav.html' %}
+
+  <h1 style="text-align: center;color: red;">Update Employee Here ! </h1>
+  <div class="container">
+     <form action="{% url 'updateEmployeeDetails' %}" method="POST">
+      
+      {% csrf_token %}
+      
+      <div class="form-group"> 
+      <input type="text" class="form-control" 
+       placeholder="Enter Employee Id" name="eid" value="{{emp.empid}}" readonly/>
+      </div>
+
+      <div class="form-group"> 
+      <input type="text" class="form-control"
+      placeholder="Enter Employee Name" name="ename"  value="{{emp.ename}}"/>
+    </div>
+      
+      <div class="form-group"> 
+      <input type="email"  class="form-control" 
+      placeholder="Enter Employee Email" name="eemail"  value="{{emp.eemail}}"/>
+    </div>
+
+      <div class="form-group"> 
+      <input type="text"  class="form-control" placeholder="Enter Employee Department"
+       name="edept" value="{{emp.edept}}"/>
+    </div>
+
+      <div class="form-group"> 
+      <input type="number"  class="form-control" 
+      placeholder="Enter Employee Salary" name="esal"  value="{{emp.esalary}}"/>
+    </div>
+
+      <div class="form-group"> 
+      <input type="date"  class="form-control" placeholder="Enter Employee Joining Date" 
+      name="ejdate" value="{{emp.ejoindate}}" readonly/>
+    </div>
+
+      <div class="form-group"> 
+      <input type="tel"  class="form-control"
+       placeholder="Enter Employee Contact" name="econtact"
+       value="{{emp.econtact}}"/>
+    </div>
+
+      <div class="form-group"> 
+      <input type="text"  class="form-control" 
+      placeholder="Enter Employee City" name="ecity"  value="{{emp.ecity}}"/>
+    </div>
+
+      <div class="form-group"> 
+       <input type="submit" class="form-control btn btn-primary" 
+       value="Update Employee"/>
+      </div>
+     </form>
+   
+  </div>
+  {% include 'footer.html' %}

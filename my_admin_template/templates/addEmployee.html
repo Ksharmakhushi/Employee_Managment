@@ -1,0 +1,52 @@
+{% load static %}
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+
+<h1 class="text-center mb-4">Add Employee</h1>
+
+<div class="container mt-5">
+    <form action="{% url 'saveEmployee' %}" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Employee Id</label>
+            <input type="text" class="form-control" placeholder="Enter Employee Id" name="eid" >
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Employee Name</label>
+            <input type="text" class="form-control" placeholder="Enter Employee Name" name="ename">
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label">Employee Email</label>
+            <input type="email" class="form-control" placeholder="Enter Employee Email" name="eemail">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Employee Department</label>
+            <input type="text" class="form-control" placeholder="Enter Employee Department" name="edept">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Employee Salary</label>
+            <input type="number" class="form-control" placeholder="Enter Employee Salary" name="esal">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Employee Joining</label>
+            <input type="date" class="form-control" placeholder="Enter Employee Joining Date" name="ejdate">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Employee Contact</label>
+            <input type="tel" class="form-control" placeholder="Enter Employee Contact" name="econtact">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Employee City</label>
+            <input type="text" class="form-control" placeholder="Enter Employee City" name="ecity">
+        </div>
+        <div class="mb-3">
+            <input type="submit" class="form-control btn btn-primary w-100" value="Add Employee">
+        </div>
+       
+    </form>
+
+</div>
+{% include 'footer.html' %}
