@@ -28,6 +28,6 @@ urlpatterns = [
     path('viewAllEmployeeList/0',viewAllEmployeeList,name="viewAllEmployeeList"),
     path('updateEmployee/<int:empid>/', updateEmployee, name="updateEmployee"),
     path('updateEmployeeDetails/', updateEmployeeDetails, name="updateEmployeeDetails"),
-    path('deleteEmployee/<id:empid>/',deleteEmployeeRecord,name="deleteEmployee")
+    path('deleteEmployee/<int:empid>/',deleteEmployeeRecord,name="deleteEmployee")
 
 ]
